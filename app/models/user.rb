@@ -21,6 +21,9 @@ class User < ApplicationRecord
   # これを防ぐためにyyyには架空のテーブル名を、zzzは実際にデータを取得しにくいテーブル名を書く。
   has_many :followings, through: :relationships,            source: :followed
   has_many :followers,  through: :reverse_of_relationships, source: :follower
+  has_many :group_users
+  # userは、group_usersという中間テーブルを通じてgroupsにアクセスできるという記述。
+  has_many :groups, through: :group_users
 
   has_one_attached :profile_image
 
