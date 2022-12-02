@@ -1,0 +1,14 @@
+<div class="container">
+  <h2 class="margin_top text_center">送信が完了しました</h2>
+
+  <div class="main_width">
+    <div class="margin_top">内容は以下の通りです。</div>
+    <div class="smaill_margin_top">
+      [タイトル]<p class="font-weight-bold"><%= @mail_title %></p>
+    </div>
+    <div>
+      <!-- safe_joinは、改行表示にするため -->
+      [本文]<p class="font-weight-bold"><%= safe_join(@mail_content.split("\n"), tag(:br)) %></p>
+    </div>
+  </div>
+</div>
